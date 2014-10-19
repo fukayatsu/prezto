@@ -27,6 +27,21 @@ function ghget() {
   ghq get -p $1
   cd $(ghq list -p | grep $1 | peco)
 }
-function chpwd() {
-  ls -a
+function chpwd() { ls -a }
+
+function dotlink() {
+  dotfiles_dir=~/Dropbox/dotfiles
+
+  for file in $@; do;
+    if [[ $file =~ "^\..+" && ! -L $file ]]; then
+      new_file=$(echo $file | sed -e "s/^\.//")
+      mv $file $dotfiles_dir/$new_file
+    fi
+  done;
+
+  for file in $(ls $dotfiles_dir); do;
+    if [[ ! -e ~/.$file ]]; then
+      ln -s $dotfiles_dir/$file ~/.$file
+    fi
+  done;
 }
