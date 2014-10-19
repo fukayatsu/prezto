@@ -11,3 +11,22 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+# aliases
+alias g='cd $(ghq list -p | peco)'
+alias gh='gh-open $(ghq list -p | peco)' # https://github.com/fukayatsu/gh-open
+alias e="atom"
+alias p="atom ."
+alias o="open"
+alias oo="open ."
+alias gho="gh-open ."
+alias gget="ghq get -p"
+
+# functions
+function ghget() {
+  ghq get -p $1
+  cd $(ghq list -p | grep $1 | peco)
+}
+function chpwd() {
+  ls -a
+}
