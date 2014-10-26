@@ -21,6 +21,8 @@ alias o="open"
 alias oo="open ."
 alias gho="gh-open ."
 alias gget="ghq get -p"
+alias be="bundle exec"
+alias hubb="hub browse"
 
 # functions
 function ghget() {
@@ -44,4 +46,15 @@ function dotlink() {
       ln -s $dotfiles_dir/$file ~/.$file
     fi
   done;
+}
+
+function agsub() {
+    if test $# -ne 2; then
+        echo 'usage: agsub original replaced'
+        return 1
+    fi
+    if test $1 = $2; then
+        return 1
+    fi
+    eval "ag $1 -l | xargs sed -i '' -e 's/$1/$2/g'"
 }
