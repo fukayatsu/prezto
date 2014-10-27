@@ -12,6 +12,8 @@ fi
 
 # Customize to your needs...
 
+export EDITOR="atom -w"
+
 # aliases
 alias g='cd $(ghq list -p | peco)'
 alias gh='gh-open $(ghq list -p | peco)' # https://github.com/fukayatsu/gh-open
@@ -21,8 +23,8 @@ alias o="open"
 alias oo="open ."
 alias gho="gh-open ."
 alias gget="ghq get -p"
-alias be="bundle exec"
 alias hubb="hub browse"
+alias ec2ssh="ec2ls | percol | cut -f 4 | pbcopy && ssh `pbpaste`"
 
 # functions
 function ghget() {
@@ -49,12 +51,12 @@ function dotlink() {
 }
 
 function agsub() {
-    if test $# -ne 2; then
-        echo 'usage: agsub original replaced'
-        return 1
-    fi
-    if test $1 = $2; then
-        return 1
-    fi
-    eval "ag $1 -l | xargs sed -i '' -e 's/$1/$2/g'"
+  if test $# -ne 2; then
+    echo 'usage: agsub original replaced'
+    return 1
+  fi
+  if test $1 = $2; then
+    return 1
+  fi
+  eval "ag $1 -l | xargs sed -i '' -e 's/$1/$2/g'"
 }
