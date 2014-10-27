@@ -25,6 +25,7 @@ alias gho="gh-open ."
 alias gget="ghq get -p"
 alias hubb="hub browse"
 alias ec2ssh="ec2ls | percol | cut -f 4 | pbcopy && ssh `pbpaste`"
+alias be="bundle exec"
 
 # functions
 function ghget() {
