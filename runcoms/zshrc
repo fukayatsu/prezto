@@ -24,8 +24,10 @@ alias oo="open ."
 alias gho="gh-open ."
 alias gget="ghq get -p"
 alias hubb="hub browse"
-alias ec2ssh="ec2ls | percol | cut -f 4 | pbcopy && ssh `pbpaste`"
+alias essh='ec2ls | percol | cut -f 4 | pbcopy && ssh `pbpaste`'
 alias be="bundle exec"
+alias ss="be spring stop"
+alias mailcatcher="~/.rbenv/versions/2.1.3/bin/mailcatcher"
 
 # functions
 function ghget() {
@@ -61,3 +63,5 @@ function agsub() {
   fi
   eval "ag $1 -l | xargs sed -i '' -e 's/$1/$2/g'"
 }
+export PATH="$HOME/.nodenv/bin:$PATH"
+eval "$(nodenv init -)"
