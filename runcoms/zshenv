@@ -13,7 +13,13 @@ fi
 # exports
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export PATH="$HOME/.rbenv/bin:$PATH"; eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:$PATH";
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+### *env
+eval "$(rbenv init -)"
+eval "$(nodenv init -)"
+eval "$(direnv hook zsh)"
