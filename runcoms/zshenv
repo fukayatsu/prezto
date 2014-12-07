@@ -11,6 +11,7 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 fi
 
 # exports
+export EDITOR="vim"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH="$HOME/.rbenv/bin:$PATH";
@@ -18,8 +19,17 @@ export PATH="$HOME/.rbenv/bin:$PATH";
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-
 ### *env
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 eval "$(direnv hook zsh)"
+
+### Android
+BREW_PREFIX=`brew --prefix`
+
+export ANDROID_SDK="$BREW_PREFIX/opt/android-sdk"
+export ANDROID_NDK="$BREW_PREFIX/opt/android-ndk"
+export ANDROID_HOME="$ANDROID_SDK"
+
+export RUBYMOTION_ANDROID_SDK="$ANDROID_SDK" # for RubyMotion
+export RUBYMOTION_ANDROID_NDK="$ANDROID_NDK" # for RubyMotion
