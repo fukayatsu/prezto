@@ -31,6 +31,12 @@ alias ss="be spring stop"
 alias mailcatcher="~/.rbenv/versions/2.1.3/bin/mailcatcher"
 alias nopr='git commit --allow-empty -m "NOPR: squash me [ci skip]"'
 
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
+
+# https://github.com/nvbn/thefuck
+alias fuck='$(thefuck $(fc -ln -1))'
+
 # functions
 function ghget() {
   ghq get -p $1
@@ -68,4 +74,3 @@ function agsub() {
 export PATH="$HOME/.nodenv/bin:$PATH"
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
-
