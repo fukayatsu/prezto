@@ -28,11 +28,12 @@ eval "$(nodenv init -)"
 eval "$(direnv hook zsh)"
 
 ### Android
-BREW_PREFIX=`brew --prefix`
-
-export ANDROID_SDK="$BREW_PREFIX/opt/android-sdk"
-export ANDROID_NDK="$BREW_PREFIX/opt/android-ndk"
-export ANDROID_HOME="$ANDROID_SDK"
-
-export RUBYMOTION_ANDROID_SDK="$ANDROID_SDK" # for RubyMotion
-export RUBYMOTION_ANDROID_NDK="$ANDROID_NDK" # for RubyMotion
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+# BREW_PREFIX=`brew --prefix`
+#
+# export ANDROID_SDK="$BREW_PREFIX/opt/android-sdk"
+# export ANDROID_NDK="$BREW_PREFIX/opt/android-ndk"
+# export ANDROID_HOME="$ANDROID_SDK"
+#
+# export RUBYMOTION_ANDROID_SDK="$ANDROID_SDK" # for RubyMotion
+# export RUBYMOTION_ANDROID_NDK="$ANDROID_NDK" # for RubyMotion
