@@ -23,11 +23,6 @@ export PATH="/usr/local/bin:$PATH";
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-### *env
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
-eval "$(direnv hook zsh)"
-
 ### Android
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 # BREW_PREFIX=`brew --prefix`
