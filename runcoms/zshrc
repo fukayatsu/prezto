@@ -18,6 +18,7 @@ fi
 eval "$(rbenv init -)"
 eval "$(nodenv init -)"
 eval "$(direnv hook zsh)"
+eval $(docker-machine env)
 
 export EDITOR="atom"
 
@@ -84,3 +85,6 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -f ~/src/github.com/b4b4r07/enhancd/enhancd.sh ] && source ~/src/github.com/b4b4r07/enhancd/enhancd.sh
+
+# added by travis gem
+[ -f /Users/fukayatsu/.travis/travis.sh ] && source /Users/fukayatsu/.travis/travis.sh
