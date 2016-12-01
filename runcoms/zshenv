@@ -25,6 +25,10 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### JAVA
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH="$JAVA_HOME:$PATH"
+
 ### Android
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 # BREW_PREFIX=`brew --prefix`
