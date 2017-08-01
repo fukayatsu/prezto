@@ -25,6 +25,9 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+### chrom
+export PATH=$PATH:/Users/fukayatsu/src/chromium.googlesource.com/chromium/tools/depot_tools
+
 ### JAVA
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH="$JAVA_HOME:$PATH"

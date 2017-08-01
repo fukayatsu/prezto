@@ -81,9 +81,19 @@ function agsub() {
 }
 export PATH="$HOME/.nodenv/bin:$PATH"
 
+function peco-history-selection() {
+    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 [ -f ~/src/github.com/b4b4r07/enhancd/init.sh ] && source ~/src/github.com/b4b4r07/enhancd/init.sh
 
 # added by travis gem
 [ -f /Users/fukayatsu/.travis/travis.sh ] && source /Users/fukayatsu/.travis/travis.sh
+eval "$(plenv init - zsh)"
